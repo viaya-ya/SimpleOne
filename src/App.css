@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	overflow: hidden;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+:root {
+  --border-color: #D5D8DD;
+  --placeholder-text-color: #ABB1BA;
+  --text-color: #2E3238;
+  --input-item-backgroundcolor: ##99D5FF;
+  --border-radius: 4px;
+  --height-contentMain: calc(100vh -  48px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Блоки */
+.text {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.iconBorder {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  cursor: pointer;
+}
+
+.search {
+  -webkit-appearance: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 5px;
+
+  &::placeholder {
+      background-repeat: no-repeat;
+      background-position: right center;
+      color: var(--placeholder-text-color);
+  }
+
+  &:focus::placeholder {
+      background-image: none;
+  }
+
+  &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Стилизация календаря */
+::-webkit-calendar-picker-indicator {
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* main */
+.main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  height: var(--height-contentMain);
 }
